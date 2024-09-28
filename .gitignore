@@ -1,0 +1,4 @@
+code/vendor
+code/cache
+db/* 
+!db/application1
