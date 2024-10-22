@@ -122,6 +122,9 @@ class UserController extends AbstractController {
     }
 
     public function actionHash(): string {
+        if (empty($_GET['pass_string']) || substr_count($_GET['pass_string'], " ") != 0){
+            throw new \Exception("Пароль не валиден.");
+        }
         return Auth::getPasswordHash($_GET['pass_string']);
     }
 
